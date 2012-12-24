@@ -5,6 +5,7 @@
         <data xmlns="http://nbpython.dev.java.net/ns/php-project/1">
             <name>NewPythonProject</name>
             <sources>
+                <root id="src.tools.dir"/>
                 <root id="museum.dir"/>
             </sources>
             <tests/>
