@@ -22,3 +22,26 @@ class Edition(models.Model):
     chair = models.ManyToManyField(Researcher)
     def __unicode__(self):
         return self.name + " " + unicode(self.year)
+
+class Prize(models.Model):
+    title = models.CharField(max_length=100)
+    place = models.IntegerField()
+    def __unicode__(self):
+        return self.title + " (" + unicode(self.place) + " place)"
+
+class Tool(models.Model):
+    name = models.CharField(max_length=100)
+    url = models.URLField()
+    def __unicode__(self):
+        return self.name
+
+
+class Paper(models.Model):
+    title = models.CharField(max_length=100)
+    author = models.ManyToManyField(Researcher)
+    abstract = models.TextField()
+    venue = models.ForeignKey(Edition)
+    prize = models.ForeignKey(Prize, blank=True, null=True)
+    tool = models.ForeignKey(Tool, blank=True, null=True)
+    def __unicode__(self):
+        return self.title
