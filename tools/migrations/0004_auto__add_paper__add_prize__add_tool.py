@@ -11,7 +11,7 @@ class Migration(SchemaMigration):
         # Adding model 'Paper'
         db.create_table('tools_paper', (
             ('id', self.gf('django.db.models.fields.AutoField')(primary_key=True)),
-            ('title', self.gf('django.db.models.fields.CharField')(max_length=100)),
+            ('title', self.gf('django.db.models.fields.CharField')(max_length=150)),
             ('abstract', self.gf('django.db.models.fields.TextField')()),
             ('venue', self.gf('django.db.models.fields.related.ForeignKey')(to=orm['tools.Edition'])),
             ('prize', self.gf('django.db.models.fields.related.ForeignKey')(to=orm['tools.Prize'], null=True, blank=True)),
@@ -79,7 +79,7 @@ class Migration(SchemaMigration):
             'author': ('django.db.models.fields.related.ManyToManyField', [], {'to': "orm['tools.Researcher']", 'symmetrical': 'False'}),
             'id': ('django.db.models.fields.AutoField', [], {'primary_key': 'True'}),
             'prize': ('django.db.models.fields.related.ForeignKey', [], {'to': "orm['tools.Prize']", 'null': 'True', 'blank': 'True'}),
-            'title': ('django.db.models.fields.CharField', [], {'max_length': '100'}),
+            'title': ('django.db.models.fields.CharField', [], {'max_length': '150'}),
             'tool': ('django.db.models.fields.related.ForeignKey', [], {'to': "orm['tools.Tool']", 'null': 'True', 'blank': 'True'}),
             'venue': ('django.db.models.fields.related.ForeignKey', [], {'to': "orm['tools.Edition']"})
         },
