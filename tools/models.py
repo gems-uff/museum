@@ -37,7 +37,7 @@ class Tool(models.Model):
 
 
 class Paper(models.Model):
-    title = models.CharField(max_length=150)
+    title = models.CharField(max_length=200)
     author = models.ManyToManyField(Researcher)
     abstract = models.TextField()
     venue = models.ForeignKey(Edition)
